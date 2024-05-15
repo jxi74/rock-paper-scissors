@@ -77,6 +77,11 @@ const finalResults = document.querySelector("#finalResults");
 const parentNode = document.querySelector("body");
 const btnContainer = document.querySelector("#btn-container");
 
+const playAgain = document.querySelector("#playAgain")
+playAgain.addEventListener("click", () => {
+    location.reload();
+});
+
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         humanChoice = button.id;
@@ -99,6 +104,7 @@ function startGame() {
     if (humanScore === 5 || computerScore === 5) {
         displayResults();
         parentNode.removeChild(btnContainer);
+        playAgain.setAttribute("style", "display: block");
     }
 }
 
